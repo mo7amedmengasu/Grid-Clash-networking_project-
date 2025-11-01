@@ -24,10 +24,10 @@ Running the server (PowerShell examples)
 
 ```powershell
 # run with defaults
-python networking_project\server.py
+python server.py
 
 # or specify host/port/rate
-python networking_project\server.py --host 0.0.0.0 --port 10000 --rate 10
+python server.py --host 127.0.0.1 --port 10000 --rate 10
 ```
 
 Running the pygame client
@@ -36,10 +36,10 @@ Important: the pygame client requires a numeric player id.
 
 ```powershell
 # example: run a client as player 1 connecting to localhost:10000
-python networking_project\client_pygame.py --player_id 1 --server_host 127.0.0.1 --server_port 10000
+python client_pygame.py --server_host 127.0.0.1 --server_port 10000 --player_id 1
 
 # run multiple clients on the same machine by launching additional terminals and using different --player_id values
-python networking_project\client_pygame.py --player_id 2 --server_host 127.0.0.1 --server_port 10000
+python client_pygame.py --server_host 127.0.0.1 --server_port 10000 --player_id 2
 ```
 
 Notes / Troubleshooting
@@ -58,9 +58,3 @@ other folders...
 requirements.txt
 ```
 
-If you'd like, I can also:
-- Add a minimal README at the workspace root linking to this file.
-- Create a small launch script to run server + multiple clients locally for testing.
-
----
-Generated on: 2025-11-01
