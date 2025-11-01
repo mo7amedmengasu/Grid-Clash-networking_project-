@@ -1,4 +1,4 @@
-# GSync — Grid Clash (networking_project)
+# 7amada El3aw — Grid Clash (networking_project)
 
 This small project demonstrates a simple UDP-based multiplayer grid game (server + pygame client).
 
