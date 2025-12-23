@@ -1,0 +1,5 @@
+Scenario,Files,Packets,Mean_Latency_ms,Median_Latency_ms,P95_Latency_ms,Std_Latency_ms,Mean_Jitter_ms,P95_Jitter_ms,Delivery_Rate_%,Loss_Rate_%
+Baseline,20,24162,0.6,0.0,1.7,2.97,4.05,3.0,100.0,0.0
+2% Loss,20,23609,0.52,0.0,1.72,5.69,5.14,3.05,97.9,2.1
+5% Loss,20,21798,0.61,0.0,1.74,3.0,7.51,42.12,94.93,5.07
+100ms Delay,20,24122,95.36,101.0,103.3,104.58,4.78,3.05,100.0,0.0

@@ -343,7 +343,7 @@ main() {
     echo ""
 
     echo "Next steps:"
-    echo "  1. Analyze results: python3 analyze_results_enhanced.py"
+    echo "  1. Analyze results: python analyze_results.py"
     echo "  2. Examine PCAP files with Wireshark/tshark"
     echo "  3. Review generated plots in analysis_results/"
     echo "  4. Document results in Mini-RFC and technical report"

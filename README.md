@@ -104,15 +104,9 @@ The easiest way to run all tests automatically!
 - ✓ Applies network impairments using tc/netem (no manual setup!)
 - ✓ Each test runs for 60 seconds
 - ✓ Auto-cleanup after each test
-- ✓ Total time: ~5 minutes
+- ✓ Total time: ~20 minutes
 
-### For Phase 2 (Run 5 Times):
 
-   sudo ./run_tests.sh  # Run 1
-   sudo ./run_tests.sh  # Run 2
-   sudo ./run_tests.sh  # Run 3
-   sudo ./run_tests.sh  # Run 4
-   sudo ./run_tests.sh  # Run 5
 
 ### Troubleshooting Bash Script:
 
@@ -436,7 +430,7 @@ python run_tests_windows.py        # Windows
 
 # Manual server/client:
 python server.py --rate 20
-python client_pygame.py --player_id 1 --scenario baseline
+python client_pygame.py --player_id 1
 
 # Install dependencies:
 pip install pygame psutil                                    # Windows
