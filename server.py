@@ -147,6 +147,11 @@ class GridServer:
                             self.grid[cell_id] = player_id
                             accepted = 1
 
+                    # Log to terminal
+                    row, col = cell_id // GRID_N, cell_id % GRID_N
+                    status = "ACCEPTED" if accepted else "REJECTED"
+                    print(f"[SERVER] Player {player_id} -> Cell ({row},{col}) [{status}]")
+
                     # Log event to CSV
                     self.event_writer.writerow([
                         recv_time, f"{addr}", player_id, event_type,
