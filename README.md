@@ -126,53 +126,6 @@ Problem: Display/GUI errors
 Fix: Install X server (VcXsrv) or run on native Linux
 
 
-Option 2: Automated Python Script (Windows)
---------------------------------------------
-For Windows users without WSL2:
-
-1. Run the script:
-   python run_tests_windows.py
-
-2. Follow prompts to configure Clumsy for each scenario
-
-3. Each test runs for 60 seconds automatically
-
-
-Option 3: Manual Testing with Clumsy (Windows)
------------------------------------------------
-1. Download & install Clumsy: https://jagt.github.io/clumsy/
-2. Run as Administrator
-
-For each scenario, repeat 5 times:
-
-┌─────────────┬────────────────────┬─────────────────────────────────┐
-│ Scenario    │ Clumsy Settings    │ Commands                        │
-├─────────────┼────────────────────┼─────────────────────────────────┤
-│ Baseline    │ Off (no impair)    │ python server.py --rate 20      │
-│             │                    │ python client_pygame.py         │
-│             │                    │   --player_id 1 --scenario      │
-│             │                    │   baseline                      │
-├─────────────┼────────────────────┼─────────────────────────────────┤
-│ Loss 2%     │ Drop = 2.0         │ python server.py --rate 20      │
-│             │ Click "Start"      │ python client_pygame.py         │
-│             │                    │   --player_id 1 --scenario      │
-│             │                    │   loss2                         │
-├─────────────┼────────────────────┼─────────────────────────────────┤
-│ Loss 5%     │ Drop = 5.0         │ python server.py --rate 20      │
-│             │ Click "Start"      │ python client_pygame.py         │
-│             │                    │   --player_id 1 --scenario      │
-│             │                    │   loss5                         │
-├─────────────┼────────────────────┼─────────────────────────────────┤
-│ Delay 100ms │ Lag = 100          │ python server.py --rate 20      │
-│             │ Click "Start"      │ python client_pygame.py         │
-│             │                    │   --player_id 1 --scenario      │
-│             │                    │   delay100                      │
-└─────────────┴────────────────────┴─────────────────────────────────┘
-
-Play each test for 60 seconds, then close. Don't forget to click "Stop" in 
-Clumsy between tests!
-
-
 Option 4: Manual Testing with WSL2
 -----------------------------------
 If automated script doesn't work:
