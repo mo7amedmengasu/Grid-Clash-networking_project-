@@ -1,0 +1,2 @@
+timestamp_ms,packets_received,duplicate_rate,sequence_gaps,scenario
+1766505307010,40,0.0,0,baseline
