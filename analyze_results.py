@@ -1,5 +1,5 @@
 """
-GSync v2 - Enhanced Test Results Analysis
+GSync v1 - Enhanced Test Results Analysis
 Analyzes CSV logs from all test scenarios and generates comprehensive reports
 Supports multiple clients and multiple runs per scenario
 """

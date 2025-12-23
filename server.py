@@ -10,7 +10,7 @@ from collections import deque
 # Protocol constants
 HEADER_STRUCT = struct.Struct("!4s B B I I Q H I")  # 28-byte binary header
 PROTO_ID = b"GSYN"
-VERSION = 1
+VERSION = 2
 
 # Message types
 MSG_SNAPSHOT = 0
@@ -33,7 +33,7 @@ class GridServer:
     def __init__(self, host="127.0.0.1", port=10000, rate_hz=DEFAULT_RATE_HZ):
         # Network setup
         self.addr = (host, port)
-        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # IPv4 , UDP
         self.sock.bind(self.addr)
 
         # Server state
@@ -101,7 +101,7 @@ class GridServer:
         """Receive and process INIT and EVENT messages from clients"""
         while self.running:
             try:
-                data, addr = self.sock.recvfrom(4096)
+                data, addr = self.sock.recvfrom(1200)
                 if len(data) < HEADER_STRUCT.size:
                     continue
 
@@ -174,9 +174,7 @@ class GridServer:
             if owner:
                 scores[owner] = scores.get(owner, 0) + 1
 
-        if not scores:
-            return False, b""
-
+        
         # Determine winner (player with most cells)
         winner_id = max(scores, key=scores.get)
         print(f"\n[SERVER] GAME OVER! Winner: Player {winner_id} ({scores[winner_id]} cells)")
@@ -202,7 +200,7 @@ class GridServer:
                 # Add to history (K=3 redundancy)
                 self.snapshot_history.appendleft(payload)
                 
-                # Combine last 3 snapshots into one packet
+                # Combine last 3 snapshots into one packet (303 bytes)
                 combined = b"".join(self.snapshot_history)
                 
                 # Snapshot of current state

@@ -2,7 +2,6 @@
 GSync v2 - Grid Clash Client (Phase 2)
 UDP client with K=3 redundancy parsing, metrics logging, and PyGame UI.
 """
-
 import argparse
 import binascii
 import csv
@@ -12,13 +11,11 @@ import struct
 import threading
 import time
 from datetime import datetime
-
 import pygame
-
 # Protocol constants
 HEADER_STRUCT = struct.Struct("!4s B B I I Q H I")  # 28-byte binary header
 PROTO_ID = b"GSYN"
-VERSION = 1
+VERSION = 2
 
 # Message types
 MSG_SNAPSHOT = 0
